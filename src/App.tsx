@@ -82,7 +82,7 @@ export default function App() {
             <Scan size={24} className="text-white" />
           </div>
           <div>
-            <h1 className="text-lg font-bold tracking-tight leading-none">ScanGo</h1>
+            <h1 className="text-lg font-bold tracking-tight leading-none">QR Code Scanner</h1>
             <p className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1 font-bold">Pro Scanner</p>
           </div>
         </div>

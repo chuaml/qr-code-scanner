@@ -1,20 +1,20 @@
 {
-  "short_name": "ScanGo",
-  "name": "ScanGo QR Scanner",
+  "short_name": "QR Scanner",
+  "name": "QR code Scanner",
   "icons": [
     {
-      "src": "https://picsum.photos/seed/qr/192/192",
+      "src": "./icon-512.webp",
       "type": "image/png",
       "sizes": "192x192"
     },
     {
-      "src": "https://picsum.photos/seed/qr/512/512",
+      "src": "./icon-512.webp",
       "type": "image/png",
       "sizes": "512x512"
     }
   ],
   "start_url": "./",
-  "background_color": "#ffffff",
+  "background_color": "#ff00ff",
   "display": "standalone",
   "theme_color": "#000000",
   "description": "Fast and secure QR code scanner and generator."
