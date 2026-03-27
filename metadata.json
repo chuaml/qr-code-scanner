@@ -1,0 +1,7 @@
+{
+  "name": "ScanGo QR Scanner",
+  "description": "A high-performance, offline-capable QR code scanner and generator PWA.",
+  "requestFramePermissions": [
+    "camera"
+  ]
+}

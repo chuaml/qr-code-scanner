@@ -1,0 +1,25 @@
+services:
+  ## if got stale, run `docker compose down` to remove all previous containers; `-v` to remove volume as well
+
+  ## do NOT manually init dev-container with `docker compose up`
+  ## use vscode with `ms-vscode-remote.remote-containers` extension
+  ##  then open with vscode command `Dev Containers: Open Folder in Container`
+  ##       or `Dev Containers: Rebuild and Reopen in Container`
+  dev-container: ## for vscode dev container extension `ms-vscode-remote.remote-containers`
+    image: mcr.microsoft.com/devcontainers/javascript-node:24  # pre-built image for dev-only purpose
+    working_dir: /app/
+    ports:
+      - "4173:4173"
+      - "5173:5173"
+    volumes:
+      - ./:/app:cached
+      - ./dist/:/app/dist:delegated
+      - dependencies:/app/node_modules  # isloate node_modules/ from host, stay in container volume
+
+    # Overrides default command so things don't shut down after the process ends
+    ## allow vscode to connect into dev-container
+    command: sleep infinity
+
+volumes:
+  dependencies: # for container's node_modules/
+  ## is for safety + speed  purpose
