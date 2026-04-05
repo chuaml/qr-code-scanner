@@ -17,6 +17,7 @@ import {
 } from 'lucide-react';
 import { Scanner } from './components/Scanner';
 import { Generator } from './components/Generator';
+import { ConsoleLogger } from './components/ConsoleLogger';
 import { cn } from './lib/utils';
 
 interface ScannedItem {
@@ -82,7 +83,7 @@ export default function App() {
             <Scan size={24} className="text-white" />
           </div>
           <div>
-            <h1 className="text-lg font-bold tracking-tight leading-none">QR Code Scanner</h1>
+            <h1 className="text-lg font-bold tracking-tight leading-none">QR Scanner</h1>
             <p className="text-[10px] text-zinc-500 uppercase tracking-widest mt-1 font-bold">Pro Scanner</p>
           </div>
         </div>
@@ -95,7 +96,7 @@ export default function App() {
         )}
       </header>
 
-      <main className="max-w-2xl mx-auto px-6 pt-8 pb-32">
+      <main className="max-w-2xl mx-auto px-6 pb-32">
         <AnimatePresence mode="wait">
           {activeTab === 'scan' && (
             <motion.div
@@ -106,7 +107,6 @@ export default function App() {
               className="space-y-8"
             >
               <div className="text-center space-y-2">
-                <h2 className="text-3xl font-bold tracking-tighter">Scanner</h2>
                 <p className="text-zinc-500 text-sm">Point your camera at a QR code to scan instantly.</p>
               </div>
               
@@ -243,6 +243,9 @@ export default function App() {
           />
         </div>
       </nav>
+
+      {/* Debug Console */}
+      <ConsoleLogger />
     </div>
   );
 }
